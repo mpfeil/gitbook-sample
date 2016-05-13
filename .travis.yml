@@ -3,9 +3,6 @@ node_js:
   - "5"
 install:
   - npm install -g gitbook-cli
-script:
-  - make check
-  - make generate
 after_success:
   - bash deploy.sh
 env:
