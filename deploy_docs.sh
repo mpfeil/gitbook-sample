@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+set -o errexit -o nounset
+
+if [ "$TRAVIS_BRANCH" != "master" ]
+then
+  echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!"
+  exit 0
+fi
+
 # create dist
 rm -rf dist
 mkdir dist
@@ -20,6 +28,8 @@ done
 # push to gh-pages
 cd dist
 git init
+git config user.name "mpfeil"
+git config user.email "matthias.pfeil@wwu.de"
 git add -A
 git commit -m 'update book'
-git push -f git@github.com:mpfeil/gitbook-sample.git master:gh-pages
+git push -f https://$GH_TOKEN@github.com:mpfeil/gitbook-sample.git master:gh-pages
