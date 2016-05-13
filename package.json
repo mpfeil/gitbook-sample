@@ -1,0 +1,12 @@
+{
+  "name": "gitbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gitbook serve docs/",
+    "build": "sh deploy_docs.sh"
+  },
+  "author": "Matthias <matthias.pfeil@wwu.de>",
+  "license": "MIT"
+}
