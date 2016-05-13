@@ -1,10 +1,8 @@
 language: node_js
 node_js:
   - "5"
-before_script:
+before_install:
   - npm install -g gitbook-cli
-script:
-  - npm run build
 after_success:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy_docs.sh
 env:
