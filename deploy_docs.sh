@@ -24,4 +24,4 @@ git config user.name "mpfeil"
 git config user.email "matthias.pfeil@wwu.de"
 git add -A
 git commit -m 'update book'
-git push -f https://$GH_TOKEN@github.com:mpfeil/gitbook-sample.git master:gh-pages
+git push -f https://$GH_TOKEN@github.com/mpfeil/gitbook-sample.git master:gh-pages
